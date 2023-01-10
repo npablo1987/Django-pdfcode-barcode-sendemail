@@ -1,0 +1,34 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="default">
+  <tr>
+    <th>Rut</th>
+    <th>Nombre</th>
+    <th>Apellido p</th>
+    <th>Ápellido m</th>
+    <th>Correo</th>
+    <th>Mail</th>
+    <th>barcode</th>
+  </tr>
+
+  {%  for alumno in alumnott %}
+  <tr>
+    <td>{{ alumno.rut }}</td>
+    <td>{{ alumno.nombre }}</td>
+    <td>{{ alumno.apellidop }}</td>
+    <td>{{ alumno.apellidom }}</td>
+    <td>{{ alumno.email }}</td>
+    <td>{{ alumno.telefono }}</td>
+    <td> <img src="{% static 'barcode/'%}{{alumno.rut}}.jpg" width="100" height="50"> </td>
+
+
+  </tr>
+  {%  endfor %}
+</table>
+</body>
+</html>

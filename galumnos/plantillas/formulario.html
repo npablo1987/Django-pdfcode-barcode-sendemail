@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/correoadjunto/" method="POST"> {% csrf_token %}
+ <ul>
+  <li>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name">
+  </li>
+  <li>
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo">
+  </li>
+  <li>
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje"></textarea>
+  </li>
+     <li class="button">
+  <button type="submit">Envíe su mensaje</button>
+</li>
+
+ </ul>
+</form>
+
+</body>
+</html>

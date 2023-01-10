@@ -1,0 +1,426 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Spica Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" href="{% static 'extencion/vendors/mdi/css/materialdesignicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'extencion/vendors/css/vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'extencion/css/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'extencion/images/favicon.png' %}">
+</head>
+
+<body>
+  <div class="container-scroller d-flex">
+    <!-- partial:../../partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item sidebar-category">
+          <p>Navigation</p>
+          <span></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">
+            <i class="mdi mdi-view-quilt menu-icon"></i>
+            <span class="menu-title">Dashboard</span>
+            <div class="badge badge-info badge-pill">2</div>
+          </a>
+        </li>
+        <li class="nav-item sidebar-category">
+          <p>Components</p>
+          <span></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../docs/documentation.html">
+            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+            <span class="menu-title">Documentation</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_navbar.html -->
+
+      <nav class="navbar col-lg-12 col-12 px-0 py-0 py-lg-4 d-flex flex-row">
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="navbar-brand-wrapper">
+            <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+          </div>
+          <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, Brandon Haynes</h4>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item">
+              <h4 class="mb-0 font-weight-bold d-none d-xl-block">Mar 12, 2019 - Apr 10, 2019</h4>
+            </li>
+
+            <li class="nav-item dropdown mr-2">
+              <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+                <i class="mdi mdi-email-open mx-0"></i>
+                <span class="count bg-danger">1</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success">
+                      <i class="mdi mdi-information mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                    <p class="font-weight-light small-text mb-0 text-muted">
+                      Just now
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-warning">
+                      <i class="mdi mdi-settings mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal">Settings</h6>
+                    <p class="font-weight-light small-text mb-0 text-muted">
+                      Private message
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-info">
+                      <i class="mdi mdi-account-box mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                    <p class="font-weight-light small-text mb-0 text-muted">
+                      2 days ago
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+        <div class="navbar-menu-wrapper navbar-search-wrapper d-none d-lg-flex align-items-center">
+          <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item nav-search d-none d-lg-block">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Here..." aria-label="search" aria-describedby="search">
+              </div>
+            </li>
+          </ul>
+          </div>
+      </nav>
+
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bar chart</h4>
+                  <canvas id="barChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- base:js -->
+  <script src="{% static 'extencion/vendors/js/vendor.bundle.base.js' %}"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="{% static 'extencion/js/off-canvas.js' %}"></script>
+  <script src="{% static 'extencion/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'extencion/js/template.js' %}"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script src="{% static 'extencion/vendors/chart.js/Chart.min.js' %}"></script>
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script>
+$(function() {
+  /* ChartJS
+   * -------
+   * Data and config for chartjs
+   */
+  'use strict';
+  var data = {
+    labels: [{% for alum in alumnott %} '{{ alum.nombre}}', {% endfor %}],
+    datasets: [{
+      label: '# of Votes',
+      data: [{% for alum in alumnott %} '{{ alum.rut}}', {% endfor %}],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: false
+    }]
+  };
+  var options = {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    },
+    legend: {
+      display: false
+    },
+    elements: {
+      point: {
+        radius: 0
+      }
+    }
+
+  };
+  var doughnutPieData = {
+    datasets: [{
+      data: [30, 40, 30],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 159, 64, 0.5)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      'Pink',
+      'Blue',
+      'Yellow',
+    ]
+  };
+  var doughnutPieOptions = {
+    responsive: true,
+    animation: {
+      animateScale: true,
+      animateRotate: true
+    }
+  };
+  var areaData = {
+    labels: ["2013", "2014", "2015", "2016", "2017"],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: true, // 3: no fill
+    }]
+  };
+
+  var areaOptions = {
+    plugins: {
+      filler: {
+        propagate: true
+      }
+    }
+  }
+
+  var scatterChartData = {
+    datasets: [{
+        label: 'First Dataset',
+        data: [{
+            x: -10,
+            y: 0
+          },
+          {
+            x: 0,
+            y: 3
+          },
+          {
+            x: -25,
+            y: 5
+          },
+          {
+            x: 40,
+            y: 5
+          }
+        ],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)'
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'Second Dataset',
+        data: [{
+            x: 10,
+            y: 5
+          },
+          {
+            x: 20,
+            y: -30
+          },
+          {
+            x: -25,
+            y: 15
+          },
+          {
+            x: -10,
+            y: 5
+          }
+        ],
+        backgroundColor: [
+          'rgba(54, 162, 235, 0.2)',
+        ],
+        borderColor: [
+          'rgba(54, 162, 235, 1)',
+        ],
+        borderWidth: 1
+      }
+    ]
+  }
+
+  var scatterChartOptions = {
+    scales: {
+      xAxes: [{
+        type: 'linear',
+        position: 'bottom'
+      }]
+    }
+  }
+  // Get context with jQuery - using jQuery's .get() method.
+  if ($("#barChart").length) {
+    var barChartCanvas = $("#barChart").get(0).getContext("2d");
+    // This will get the first returned node in the jQuery collection.
+    var barChart = new Chart(barChartCanvas, {
+      type: 'bar',
+      data: data,
+      options: options
+    });
+  }
+
+  if ($("#lineChart").length) {
+    var lineChartCanvas = $("#lineChart").get(0).getContext("2d");
+    var lineChart = new Chart(lineChartCanvas, {
+      type: 'line',
+      data: data,
+      options: options
+    });
+  }
+
+  if ($("#doughnutChart").length) {
+    var doughnutChartCanvas = $("#doughnutChart").get(0).getContext("2d");
+    var doughnutChart = new Chart(doughnutChartCanvas, {
+      type: 'doughnut',
+      data: doughnutPieData,
+      options: doughnutPieOptions
+    });
+  }
+
+  if ($("#pieChart").length) {
+    var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
+    var pieChart = new Chart(pieChartCanvas, {
+      type: 'pie',
+      data: doughnutPieData,
+      options: doughnutPieOptions
+    });
+  }
+
+  if ($("#areaChart").length) {
+    var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
+    var areaChart = new Chart(areaChartCanvas, {
+      type: 'line',
+      data: areaData,
+      options: areaOptions
+    });
+  }
+
+  if ($("#scatterChart").length) {
+    var scatterChartCanvas = $("#scatterChart").get(0).getContext("2d");
+    var scatterChart = new Chart(scatterChartCanvas, {
+      type: 'scatter',
+      data: scatterChartData,
+      options: scatterChartOptions
+    });
+  }
+});
+
+
+
+  </script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
